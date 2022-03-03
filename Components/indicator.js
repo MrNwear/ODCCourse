@@ -11,6 +11,7 @@ export class Indicator extends React.Component {
                 <Switch trackColor={{ true: "#ff0000", false: "#666", }} thumbColor={isEnabled ? "#00ff00" : "#fff"} value={isEnabled} />
                 {Platform.OS == 'ios' ? (<ActivityIndicator size={'large'} color="#000" />) : (<ActivityIndicator size={'large'} color={"red"} />)}
             </View>
+
         );
     }
 }
