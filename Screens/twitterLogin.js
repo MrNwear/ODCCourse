@@ -1,12 +1,37 @@
 import React from "react";
-import { Image, View, TextInput, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { Image, View, TextInput, Text, StyleSheet, TouchableOpacity, Button } from "react-native";
+import { MainButton } from "../Components/button";
 export class TwitterSignIn extends React.Component {
     state = {
         country: "Egypt",
         lastName: "Nwear"
     }
     changeCountry = () => {
-        this.setState({ country: "Libya" });
+        if (this.name === "") {
+            alert("fill the name field");
+        }
+        else if (this.password === "") {
+            alert("fill the password field");
+        }
+        else if (this.name.toLowerCase().trim() === "nwear") {
+            if (this.password != "root") {
+                alert("wrong password");
+            }
+            alert("login successful");
+        }
+        else {
+            alert("wrong UserName");
+        }
+    }
+    handleName = (text) => {
+        this.name = text;
+
+
+    }
+    name = "";
+    password = "";
+    handlePassword = (text) => {
+        this.password = text
     }
 
     render() {
@@ -17,13 +42,15 @@ export class TwitterSignIn extends React.Component {
                 </View>
                 <View style={styles.inputsContainer}>
                     <Text style={{ color: 'white', fontSize: 18, fontFamily: 'arial' }}>Join Twitter today.</Text>
-                    <TextInput placeholder="Full name" style={styles.inputStyle} />
-                    <TextInput placeholder="Email" style={styles.inputStyle} />
-                    <TouchableOpacity onPress={this.changeCountry} style={{ backgroundColor: 'white', width: '40%', borderRadius: 25, height: 30, alignItems: "center", justifyContent: "center" }}>
-                        <Text style={{ color: '#1F7FE5', fontSize: 18 }}>Continue</Text>
-                    </TouchableOpacity>
+                    <TextInput onChangeText={this.handleName} placeholder="Full name" style={styles.inputStyle} />
+                    <TextInput onChangeText={this.handlePassword} placeholder="Email" style={styles.inputStyle} />
+                    <MainButton title="essam" style={{ backgroundColor: "green" }} />
+                    <MainButton title="ibrahim" style={{ backgroundColor: "red" }} />
+                    <MainButton title="Ahmed" style={{ backgroundColor: "blue" }} />
+                    <MainButton title="Nwear" style={{ backgroundColor: "black" }} />
                     <Text style={{ color: 'white', fontSize: 16 }}>Already have an account ? <Text onPress={_ => { alert('login aho ya 3saaaaaaam') }} style={{ fontWeight: 'bold' }}>Login</Text> </Text>
                     <Text>{this.state.country}</Text>
+                    <Button title="3saaaaaan" />
                 </View>
             </View>
         );
