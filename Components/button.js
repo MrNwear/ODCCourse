@@ -4,11 +4,13 @@ export class MainButton extends React.Component {
 
     title = this.props.title
     color = this.props.style
+    handler = this.props.onpress
+    textstyle = this.props.txtstyle
     render() {
 
 
-        return (<TouchableOpacity style={[styles.buttonStyle, this.color]}>
-            <Text style={{ color: '#1F7FE5', fontSize: 18 }}>{this.title}</Text>
+        return (<TouchableOpacity style={[styles.buttonStyle, this.color]} onPress={this.handler}>
+            <Text style={[{ color: '#1F7FE5', fontSize: 18 }, this.textstyle]}>{this.title}</Text>
         </TouchableOpacity>
         );
     }
