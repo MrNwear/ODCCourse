@@ -14,6 +14,7 @@ export class ListViewComponent extends React.Component {
                 messagesCounter: 0
             },
             {
+
                 id: 1,
                 name: 'Ahmed ',
                 imgsrc: 'https://icon-library.com/images/avatar-icon/avatar-icon-14.jpg',
