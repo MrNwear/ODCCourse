@@ -1,5 +1,5 @@
 # ODCCourse
-## we have practiced on :
+Practice on  :
 * APIs 
 * google Maps 
 * FlexBox 
